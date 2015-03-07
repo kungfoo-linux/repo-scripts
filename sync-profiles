@@ -8,6 +8,7 @@ rsync -a --del \
 	--exclude=/arch.list \
 	--exclude=/arch/alpha/ \
 	--exclude=/arch/amd64-fbsd/ \
+	--exclude=/arch/amd64/no-emul-linux-x86/ \
 	--exclude=/arch/amd64/no-emul-linux-x86/eapi \
 	--exclude=/arch/amd64/no-multilib/ \
 	--exclude=/arch/amd64/x32/ \
@@ -57,6 +58,7 @@ rsync -a --del \
 	--exclude=/profiles.desc \
 	--exclude=/releases/10.0/ \
 	--exclude=/releases/13.0/ \
+	--exclude=/releases/freebsd-10.1/ \
 	--exclude=/releases/freebsd-7.2/ \
 	--exclude=/releases/freebsd-8.0/ \
 	--exclude=/releases/freebsd-8.2/ \

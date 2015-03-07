@@ -88,6 +88,9 @@ fi
 # get the ebuild
 fcopy ${catpkg}/${ebuild}
 
+# force ruby22
+sed -i -e 's/^USE_RUBY="[^"]*"$/USE_RUBY="ruby22"/g' "${TOPDIR}"/${catpkg}/${ebuild}
+
 # source ebuild to get metadata
 PF="${ebuild/.ebuild}"
 P="${PF%-r[1-9]*}"
@@ -101,7 +104,8 @@ inherit() {
 	done
 }
 
-source ${ebuild} 2> /dev/null
+source /usr/lib/portage/bin/isolated-functions.sh
+source ${ebuild} 2>/dev/null
 
 # get the patches. assumed that every patch has FILESDIR in the line.
 for i in $(eval echo $(grep FILESDIR ${ebuild} | grep -v '#.*FILESDIR' | sed -e 's:.*FILESDIR[}"]*/::' -e 's:"::g' -e "s:'::" -e "s:#.*::" -e "s: .*::")); do
@@ -174,6 +178,8 @@ net-fs/samba)
 net-fs/nfs-utils)
 	fcopy "${catpkg}/files/nfs.confd"
 	fcopy "${catpkg}/files/nfs.initd"
+	fcopy "${catpkg}/files/nfsclient.confd"
+	fcopy "${catpkg}/files/nfsclient.initd"
 	fcopy "${catpkg}/files/nfsmount.confd"
 	fcopy "${catpkg}/files/nfsmount.initd"
 	fcopy "${catpkg}/files/rpc.gssd.initd"
@@ -200,8 +206,8 @@ dev-lang/perl)
 	fcopy "${catpkg}/files/eblits/pkg_postinst-v50160001.eblit"
 	fcopy "${catpkg}/files/eblits/pkg_postrm-v50160001.eblit"
 	fcopy "${catpkg}/files/eblits/pkg_setup-v50160001.eblit"
-	fcopy "${catpkg}/files/eblits/src_configure-v50160001.eblit"
-	fcopy "${catpkg}/files/eblits/src_install-v50160001.eblit"
+	fcopy "${catpkg}/files/eblits/src_configure-v50180002.eblit"
+	fcopy "${catpkg}/files/eblits/src_install-v50200001.eblit"
 	fcopy "${catpkg}/files/eblits/src_prepare-v50160001.eblit"
 	fcopy "${catpkg}/files/eblits/src_test-v50160001.eblit"
 	;;
