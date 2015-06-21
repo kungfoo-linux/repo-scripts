@@ -18,6 +18,7 @@ rsync -a --del \
 	--exclude=/arch/ia64/ \
 	--exclude=/arch/m68k/ \
 	--exclude=/arch/mips/ \
+	--exclude=/arch/nios2/ \
 	--exclude=/arch/powerpc/ \
 	--exclude=/arch/s390/ \
 	--exclude=/arch/sh/ \
@@ -39,6 +40,7 @@ rsync -a --del \
 	--exclude=/default/linux/ia64/ \
 	--exclude=/default/linux/m68k/ \
 	--exclude=/default/linux/mips/ \
+	--exclude=/default/linux/nios2/ \
 	--exclude=/default/linux/powerpc/ \
 	--exclude=/default/linux/s390/ \
 	--exclude=/default/linux/sh/ \

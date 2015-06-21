@@ -104,7 +104,8 @@ inherit() {
 	done
 }
 
-source /usr/lib/portage/bin/isolated-functions.sh
+PORTAGE_BIN_PATH=/usr/lib/portage/python2.7
+source ${PORTAGE_BIN_PATH}/isolated-functions.sh
 source ${ebuild} 2>/dev/null
 
 # get the patches. assumed that every patch has FILESDIR in the line.
