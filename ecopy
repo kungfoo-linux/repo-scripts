@@ -140,16 +140,16 @@ fi
 
 # some special cases
 case ${catpkg} in
-app-admin/eselect-blas)
+app-eselect/eselect-blas)
 	fcopy "${catpkg}/files/blas.eselect-${PV}"
 	;;
-app-admin/eselect-cblas)
+app-eselect/eselect-cblas)
 	fcopy "${catpkg}/files/cblas.eselect-${PV}"
 	;;
-app-admin/eselect-lapack)
+app-eselect/eselect-lapack)
 	fcopy "${catpkg}/files/lapack.eselect-${PV}"
 	;;
-app-admin/eselect-pinentry)
+app-eselect/eselect-pinentry)
 	fcopy "${catpkg}/files/pinentry.eselect-${PV}"
 	;;
 app-editors/vim)
@@ -193,8 +193,16 @@ x11-apps/xinit)
 	fcopy "${catpkg}/files/chooser.sh"
 	;;
 dev-libs/mpfr)
-	fcopy "${catpkg}/files/3.1.1/patch01"
-	fcopy "${catpkg}/files/3.1.1/patch02"
+	fcopy "${catpkg}/files/3.1.2/patch01"
+	fcopy "${catpkg}/files/3.1.2/patch02"
+	fcopy "${catpkg}/files/3.1.2/patch03"
+	fcopy "${catpkg}/files/3.1.2/patch04"
+	fcopy "${catpkg}/files/3.1.2/patch05"
+	fcopy "${catpkg}/files/3.1.2/patch06"
+	fcopy "${catpkg}/files/3.1.2/patch07"
+	fcopy "${catpkg}/files/3.1.2/patch08"
+	fcopy "${catpkg}/files/3.1.2/patch09"
+	fcopy "${catpkg}/files/3.1.2/patch10"
 	;;
 dev-lang/lua)
 	fcopy "${catpkg}/files/lua-5.1-make-r1.patch"
