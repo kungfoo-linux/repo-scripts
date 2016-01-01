@@ -69,7 +69,6 @@ if [[ ! -e "${GENTOO_CACHE}/${catpkg}/${ebuild}" ]]; then
 fi
 
 einfo "Found atom ${CATEGORY}/${PN}-${PVR}"
-einfo "Fetching files from ${GENTOO_CACHE} ..."
 
 # create directories
 mkdir -p "${TOPDIR}"/{eclass,licenses,profiles,metadata}
@@ -104,9 +103,14 @@ inherit() {
 	done
 }
 
+# stubs
+debug-print() { :; }
+debug-print-function() { :; }
+EXPORT_FUNCTIONS() { :; }
+
 PORTAGE_BIN_PATH=/usr/lib/portage/python2.7
 source ${PORTAGE_BIN_PATH}/isolated-functions.sh
-source ${ebuild} 2>/dev/null
+source ${ebuild} #2>/dev/null
 
 # get the patches. assumed that every patch has FILESDIR in the line.
 for i in $(eval echo $(grep FILESDIR ${ebuild} | grep -v '#.*FILESDIR' | sed -e 's:.*FILESDIR[}"]*/::' -e 's:"::g' -e "s:'::" -e "s:#.*::" -e "s: .*::")); do
@@ -266,7 +270,6 @@ done
 setup_portdir
 
 # reset keywords
-einfo "Setting keywords to amd64 only ..."
 if is_overlay; then
 	"${TOPDIR}"/scripts/ekeyword.py ^all ~amd64 ${ebuild} >/dev/null
 else

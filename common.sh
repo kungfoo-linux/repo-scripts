@@ -30,7 +30,9 @@ reix() {
 fcopy() {
 	for file in "$@"; do
 		mkdir -p "$(dirname "${TOPDIR}/${file}")"
-		einfo "  - ${file}"
+		if [[ -z $FCOPY_QUIET ]]; then
+			einfo "  - ${file}"
+		fi
 		if [[ -z $EINFO_QUIET ]]; then
 			cp "${GENTOO_CACHE}/${file}" "${TOPDIR}/${file}"
 		else
