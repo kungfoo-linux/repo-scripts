@@ -197,16 +197,10 @@ x11-apps/xinit)
 	fcopy "${catpkg}/files/chooser.sh"
 	;;
 dev-libs/mpfr)
-	fcopy "${catpkg}/files/3.1.2/patch01"
-	fcopy "${catpkg}/files/3.1.2/patch02"
-	fcopy "${catpkg}/files/3.1.2/patch03"
-	fcopy "${catpkg}/files/3.1.2/patch04"
-	fcopy "${catpkg}/files/3.1.2/patch05"
-	fcopy "${catpkg}/files/3.1.2/patch06"
-	fcopy "${catpkg}/files/3.1.2/patch07"
-	fcopy "${catpkg}/files/3.1.2/patch08"
-	fcopy "${catpkg}/files/3.1.2/patch09"
-	fcopy "${catpkg}/files/3.1.2/patch10"
+	fcopy "${catpkg}/files/3.1.3/patch01"
+	fcopy "${catpkg}/files/3.1.3/patch02"
+	fcopy "${catpkg}/files/3.1.3/patch03"
+	fcopy "${catpkg}/files/3.1.3/patch04"
 	;;
 dev-lang/lua)
 	fcopy "${catpkg}/files/lua-5.1-make-r1.patch"

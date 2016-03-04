@@ -29,6 +29,4 @@ if [[ ! -e "${tschk}" || $(find "${tschk}" -mmin +180) != "" ]]; then
 fi
 
 # update gentoo eix cache
-if test "${tschk}" -nt "${GENTOO_EIX_CACHE}"; then
-	./scripts/eix-update
-fi
+./scripts/eix-update
