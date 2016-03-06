@@ -46,8 +46,8 @@ is_overlay() {
 }
 
 is_blacklisted() {
-	if [[ -r "${TOPDIR}"/profiles/releases/zentoo/eupdate.blacklist ]]; then
-		blacklist=$(<"${TOPDIR}"/profiles/releases/zentoo/eupdate.blacklist)
+	if [[ -r "${TOPDIR}"/.eupdate.blacklist ]]; then
+		blacklist=$(<"${TOPDIR}"/.eupdate.blacklist)
 		for a in ${blacklist}; do
 			if [[ ${1} == ${a} ]]; then
 				ewarn "${1} is blacklisted"

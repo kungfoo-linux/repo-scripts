@@ -5,7 +5,7 @@ source "${TOPDIR}"/scripts/common.sh
 
 export SKIP_DIFF=1
 #export EINFO_QUIET=true
-set -- $(<profiles/releases/zentoo/eupdate.blacklist)
+set -- $(<"${TOPDIR}"/.eupdate.blacklist)
 
 # expand atoms first
 for atom in "$@"; do
@@ -23,7 +23,7 @@ for atom in "$@"; do
 	fi
 
 	# expand atom
-	atoms=$("${TOPDIR}"/profiles/releases/zentoo/eupdate.expand.sh ${atom})
+	atoms=$("${TOPDIR}"/.eupdate.expand.sh ${atom})
 
 	rm -rf ${catpkg}
 
