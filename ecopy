@@ -99,7 +99,7 @@ PV="${P/${PN}-}"
 inherit() {
 	INHERIT="${INHERIT} $*"
 	for f in $*; do
-		source "${TOPDIR}/eclass/${f}.eclass"
+		source "${GENTOO_CACHE}/eclass/${f}.eclass"
 	done
 }
 
