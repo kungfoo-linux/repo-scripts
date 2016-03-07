@@ -229,7 +229,7 @@ esac
 
 # (re)fetch used eclasses/licenses
 for i in ${INHERIT}; do
-	if !is_overlay || [[ ! -e /usr/portage/eclass/${i}.eclass ]]; then
+	if ! is_overlay || [[ ! -e /usr/portage/eclass/${i}.eclass ]]; then
 		fcopy "eclass/${i}.eclass"
 		sed -i -e '/\$Header:/d' "${TOPDIR}/eclass/${i}.eclass"
 		sed -i -e 's/^\(XORG_EAUTORECONF_ARCHES\)="\(.*\)"/\1=""/g' "${TOPDIR}/eclass/${i}.eclass"
