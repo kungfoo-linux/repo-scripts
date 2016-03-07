@@ -4,6 +4,5 @@ TOPDIR=$(realpath $(dirname $0)/..)
 source "${TOPDIR}"/scripts/common.sh
 
 "${TOPDIR}"/scripts/sync-profiles
-"${TOPDIR}"/scripts/sync-eclasses
 "${TOPDIR}"/scripts/eupdate
 "${TOPDIR}"/scripts/scantree

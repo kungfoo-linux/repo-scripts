@@ -42,7 +42,8 @@ fcopy() {
 }
 
 is_overlay() {
-	[[ $(<"${TOPDIR}"/profiles/repo_name) =~ "^zentoo" ]]
+	master=$(grep ^masters "${TOPDIR}"/metadata/layout.conf | awk -F= '{ print $2 }')
+	[[ -n ${master} ]]
 }
 
 is_blacklisted() {

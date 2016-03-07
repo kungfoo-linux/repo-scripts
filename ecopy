@@ -144,15 +144,6 @@ fi
 
 # some special cases
 case ${catpkg} in
-app-eselect/eselect-blas)
-	fcopy "${catpkg}/files/blas.eselect-${PV}"
-	;;
-app-eselect/eselect-cblas)
-	fcopy "${catpkg}/files/cblas.eselect-${PV}"
-	;;
-app-eselect/eselect-lapack)
-	fcopy "${catpkg}/files/lapack.eselect-${PV}"
-	;;
 app-eselect/eselect-pinentry)
 	fcopy "${catpkg}/files/pinentry.eselect-${PV}"
 	;;
@@ -169,17 +160,6 @@ app-shells/bash)
 	fcopy "${catpkg}/files/dot-bash_profile"
 	fcopy "${catpkg}/files/dot-bashrc"
 	;;
-net-fs/samba)
-	fcopy "${catpkg}/files/3.6/lmhosts"
-	fcopy "${catpkg}/files/3.6/samba.confd"
-	fcopy "${catpkg}/files/3.6/samba.initd"
-	fcopy "${catpkg}/files/3.6/samba.pam"
-	fcopy "${catpkg}/files/3.6/smb.conf.default.patch"
-	fcopy "${catpkg}/files/3.6/smbusers"
-	fcopy "${catpkg}/files/3.6/swat.xinetd"
-	fcopy "${catpkg}/files/3.6/system-auth-winbind.pam"
-	fcopy "${catpkg}/files/samba-3.4.2-lib.tevent.python.mk"
-	;;
 net-fs/nfs-utils)
 	fcopy "${catpkg}/files/nfs.confd"
 	fcopy "${catpkg}/files/nfs.initd"
@@ -193,8 +173,8 @@ net-fs/nfs-utils)
 	fcopy "${catpkg}/files/rpc.statd.initd"
 	fcopy "${catpkg}/files/rpc.svcgssd.initd"
 	;;
-x11-apps/xinit)
-	fcopy "${catpkg}/files/chooser.sh"
+dev-db/mysql)
+	fcopy "${catpkg}/files/my.cnf-5.6"
 	;;
 dev-libs/mpfr)
 	fcopy "${catpkg}/files/3.1.3/patch01"
@@ -249,7 +229,7 @@ esac
 
 # (re)fetch used eclasses/licenses
 for i in ${INHERIT}; do
-	if [[ ! -e /usr/portage/eclass/${i}.eclass ]]; then
+	if !is_overlay || [[ ! -e /usr/portage/eclass/${i}.eclass ]]; then
 		fcopy "eclass/${i}.eclass"
 		sed -i -e '/\$Header:/d' "${TOPDIR}/eclass/${i}.eclass"
 		sed -i -e 's/^\(XORG_EAUTORECONF_ARCHES\)="\(.*\)"/\1=""/g' "${TOPDIR}/eclass/${i}.eclass"
