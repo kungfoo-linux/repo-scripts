@@ -244,11 +244,7 @@ done
 setup_portdir
 
 # reset keywords
-if is_overlay; then
-	"${TOPDIR}"/scripts/ekeyword.py ^all ~amd64 ${ebuild} >/dev/null
-else
-	"${TOPDIR}"/scripts/ekeyword.py ^all amd64 ${ebuild} >/dev/null
-fi
+"${TOPDIR}"/scripts/ekeyword.py ^all amd64 ${ebuild} >/dev/null
 
 # clean CVS headers
 sed -i -e '3d' ${ebuild}

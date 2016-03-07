@@ -62,7 +62,7 @@ is_blacklisted() {
 
 setup_portdir() {
 	if is_overlay; then
-		export PORTDIR=$(realpath ${TOPDIR}/../../zentoo)
+		export PORTDIR=/usr/portage
 		export PORTDIR_OVERLAY=${TOPDIR}
 	else
 		export PORTDIR=${TOPDIR}
