@@ -9,6 +9,7 @@ if [[ $# -eq 0 ]]; then
 	export SKIP_REPOMAN=1
 	export SKIP_DIFF=1
 	export FCOPY_QUIET=false
+	rm -f eclass/*.eclass
 	set -- $(ls -1 */*/*.ebuild | xargs dirname | sort -u)
 fi
 
