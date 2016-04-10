@@ -63,7 +63,8 @@ rsync -a --del \
 	--exclude=/releases/10.0/ \
 	--exclude=/releases/13.0/ \
 	--exclude=/releases/freebsd-10.1/ \
-	--exclude=/releases/freebsd-10.2 \
+	--exclude=/releases/freebsd-10.2/ \
+	--exclude=/releases/freebsd-10.3/ \
 	--exclude=/releases/freebsd-7.2/ \
 	--exclude=/releases/freebsd-8.0/ \
 	--exclude=/releases/freebsd-8.2/ \
