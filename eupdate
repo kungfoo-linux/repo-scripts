@@ -9,6 +9,8 @@ if [[ $# -eq 0 ]]; then
 	export SKIP_REPOMAN=1
 	export SKIP_DIFF=1
 	export FCOPY_QUIET=false
+	find eclass/ -type f -not -name linux-image.eclass -delete
+	./scripts/fcopy eclass/git-2.eclass
 	set -- $(ls -1 */*/*.ebuild | xargs dirname | sort -u)
 fi
 

@@ -3,6 +3,8 @@
 TOPDIR=$(realpath $(dirname $0)/..)
 source "${TOPDIR}"/scripts/common.sh
 
+rsync -av ${GENTOO_CACHE}/eclass/ELT-patches/ ${TOPDIR}/eclass/ELT-patches/
+
 "${TOPDIR}"/scripts/sync-profiles
 "${TOPDIR}"/scripts/eupdate
 "${TOPDIR}"/scripts/scantree
